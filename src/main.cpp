@@ -2,4 +2,7 @@
 
 #include "hello.h"
 
-int main() { hello::greetings(std::cout); }
+int main() {
+	std::cout<< "Version: " <<hello::version()<< "\n";
+	hello::greetings(std::cout);
+}
