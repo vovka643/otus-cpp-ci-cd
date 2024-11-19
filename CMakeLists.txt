@@ -13,21 +13,22 @@ project(hello
 
 set(CMAKE_BUILD_TYPE Debug)
 
-#include(${PROJECT_SOURCE_DIR}/cmake/conan.cmake)
-#conan_cmake_run(
-#  CONANFILE conanfile.txt
-#  BASIC_SETUP
-#  CMAKE_TARGETS # individual targets to link to
-#  BUILD
-#	missing
-#)
+include(${PROJECT_SOURCE_DIR}/cmake/conan.cmake)
+conan_cmake_run(
+ CONANFILE conanfile.txt
+ BASIC_SETUP
+ CMAKE_TARGETS # individual targets to link to
+ BUILD
+	missing
+)
 
 configure_file(version.h.in version.h)
 include_directories(${CMAKE_BINARY_DIR})
 
-option(BUILD_TESTS "Build unittests" OFF)
+option(BUILD_TESTS "Build unittests" ON)
 
 add_subdirectory(src)
+add_subdirectory(02-homework)
 
 if(BUILD_TESTS)
 	enable_testing()
