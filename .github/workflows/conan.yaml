@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install conan
-      run: pip3 install conan
+      run: pip3 install conan==1.59.0
 
     - name: Build and test conan package
       run: conan create . demo/testing
@@ -35,7 +35,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install conan
-      run: pip3 install conan
+      run: pip3 install conan==1.59.0
 
     - name: Build and test conan package
       run: conan create . demo/testing
@@ -51,7 +51,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install conan
-      run: pip3 install conan
+      run: pip3 install conan==1.59.0
 
     - name: Build and test conan package
       run: conan create . demo/testing
