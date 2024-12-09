@@ -27,8 +27,8 @@ include_directories(${CMAKE_BINARY_DIR})
 
 option(BUILD_TESTS "Build unittests" ON)
 
-add_subdirectory(src)
-add_subdirectory(02-homework)
+add_subdirectory(src/Hello)
+add_subdirectory(src/ip_filters)
 
 if(BUILD_TESTS)
 	enable_testing()
