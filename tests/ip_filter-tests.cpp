@@ -72,6 +72,8 @@ TEST(ip_filter, filter_1) {
 
   EXPECT_THAT(filtered_ip_pool[0], testing::ElementsAre(24, 23, 88, 218));
   // EXPECT_THAT(filtered_ip_pool[1], testing::ElementsAre(24,23,88,218));
+
+  std::filesystem::remove(file_name);
 }
 
 TEST(ip_filter, filter_2) {
@@ -114,6 +116,8 @@ TEST(ip_filter, filter_2) {
 
   EXPECT_THAT(filtered_ip_pool[0], testing::ElementsAre(70, 234, 198, 76));
   EXPECT_THAT(filtered_ip_pool[1], testing::ElementsAre(70, 234, 198, 76));
+
+  std::filesystem::remove(file_name);
 }
 
 TEST(ip_filter, filter_3) {
@@ -159,4 +163,6 @@ TEST(ip_filter, filter_3) {
   EXPECT_THAT(filtered_ip_pool[0], testing::ElementsAre(176, 228, 138, 151));
   EXPECT_THAT(filtered_ip_pool[1], testing::ElementsAre(176, 228, 138, 151));
   EXPECT_THAT(filtered_ip_pool[2], testing::ElementsAre(176, 228, 138, 151));
+
+  std::filesystem::remove(file_name);
 }
