@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]) {
     auto ip_pool = get_ip_pool_from_file("ip_filter.tsv");
 
     // reverse lexicographically sort
-    std::sort(ip_pool.begin(), ip_pool.end(), std::greater());
+    std::sort(ip_pool.begin(), ip_pool.end(), std::greater<std::array<int,4>>());
 
     // output ip pool
     output_ip_pool(std::cout, ip_pool);
