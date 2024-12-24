@@ -29,6 +29,7 @@ option(BUILD_TESTS "Build unittests" ON)
 
 add_subdirectory(src/Hello)
 add_subdirectory(src/ip_filters)
+add_subdirectory(src/allocator)
 
 if(BUILD_TESTS)
 	enable_testing()
