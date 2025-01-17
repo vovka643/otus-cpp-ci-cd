@@ -1,22 +1,30 @@
 #include <iostream>
 #include <string>
 
+class GeoPrimitive //base class for geo primitives
+{
+public:
+    GeoPrimitive(int x, int y, std::string& name): m_x(x), m_y(y), m_name(name)
+    {
+    }
+
+    int m_x = 0;
+    int m_y = 0;
+    std::string m_name = "common figure";
+
+}
+
 class View
 {
 public:
 
+    void draw_figure(GeoPrimitive * figure){
+        std::cout << "draw figure" << figure->  
+    }
+
 private:
 
 };
-
-class GeoPrimitive //base class for geo primitives
-{
-public:
-
-private:
-
-}
-
 
 class Model
 {
@@ -51,28 +59,42 @@ public:
         return true;
     }
 
+    void Connect(View * view)
+    {
+        m_view = view;
+    }
+
 private:
     std::list<GeoPrimitive> figures;
+    View * m_view = nullptr;
 
 };
 
 class Control
 {
 public:
-    parce_command(std::string& command)
+    void parce_command(std::string& command)
     {
         
     }
 
-private:
+    void Connect(Model * model)
+    {
+        m_model = model;
+    }
 
+private:
+    Model * m_model = nullptr; 
 }
 
 
 int main()
 {
-    // wtf
+    Control control;
+    Model model;
+    View view;
 
-
+    control.Connect(&model);
+    model.Connect(&view);
 
 }
